@@ -45,7 +45,7 @@ cd wordpress
 
 - Type in a username and a password (for your safety you have to repeat the password)[^1]
 
-[Username_password](img/username_password.png)
+![Username_password](img/username_password.png)
 
 > [!CAUTION]  
 > A hidden folder named .secrets is created with two files inside.  
@@ -56,13 +56,13 @@ cd wordpress
 
 - WordPress typically starts on port 8080. The setup script will check if this port is in use. You can use this port or switch to your own port. 
 
-[port_free](img/port_free.png)
+![port_free](img/port_free.png)
 
-[port_change_choice](img/port_change_choice.png)
+![port_change_choice](img/port_change_choice.png)
 
 - If the port 8080 is in use you need to change the port.
 
-[port_in_use](img/port_in_use.png)
+![port_in_use](img/port_in_use.png)
 
 - After a short time, WordPress is ready to use. 
 
@@ -72,23 +72,23 @@ Open a browser and enter localhost:8080 [^2] to start configuration of WordPress
 
 First you need to chose your language
 
-[wordpress_language](img/wordpress_language.png)
+![wordpress_language](img/wordpress_language.png)
 
 After that, you have to input some information (eg. username and password) [^3] [^3] NOT the user/pass you have entered while setup
 
-[wordpress_information](img/wordpress_information.png)
+![wordpress_information](img/wordpress_information.png)
 
 A success message shows that WordPress is completely initialized and ready to use.
 
-[wordpress_success](img/wordpress_success.png)
+![wordpress_success](img/wordpress_success.png)
 
 When you click “Log in,” you will be redirected to your WordPress login page.
 
-[wordpress_login](img/wordpress_login.png)
+![wordpress_login](img/wordpress_login.png)
 
 When you log in with the username and password you just created, you will be taken to your WordPress dashboard. 
 
-[wordpress_dashboard](img/wordpress_dashboard.png)
+![wordpress_dashboard](img/wordpress_dashboard.png)
 
 Happy WordPressing
 
@@ -96,4 +96,4 @@ Happy WordPressing
 
 A root user is created for the database during setup. The root user's password can be found in the logs immediately after starting the database.
 
-[mysql_root_password](img/mysql_root_password.png)
+![mysql_root_password](img/mysql_root_password.png)
