@@ -1,4 +1,4 @@
-# Project WordPress
+# Project WordPress 
 
 The goal of this project is to dockerize WordPress.
 
@@ -66,6 +66,10 @@ cd wordpress
 
 - After a short time, WordPress is ready to use. 
 
+> [!CAUTION]  
+> A file called .env will be created.  
+> Do not move or delete this file!
+
 ### Usage
  
 Open a browser and enter localhost:8080 [^2] to start configuration of WordPress.
@@ -99,3 +103,13 @@ Happy WordPressing
 A root user is created for the database during setup. The root user's password can be found in the logs immediately after starting the database.
 
 ![mysql_root_password](img/mysql_root_password.png)
+
+***
+
+If you want to re-setup WordPress run the following command inside the project folder:
+
+```bash
+docker compose down
+```
+
+Delete the .env file and the .secrets folder and run the whole process from [Quickstart](#Quickstart) again.
