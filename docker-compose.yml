@@ -1,0 +1,42 @@
+---
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - "${WORDPRESS_PORT}:80"
+    secrets:
+      - db_user
+      - db_pass
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER_FILE: /run/secrets/db_user
+      WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db_pass
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wordpress:/var/www/html
+
+  db:
+    image: mysql:8.0
+    restart: always
+    secrets:
+      - db_user
+      - db_pass
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER_FILE: /run/secrets/db_user
+      MYSQL_PASSWORD_FILE: /run/secrets/db_pass
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:
+
+secrets:
+  db_user:
+    file: ./.secrets/db_user.txt
+  db_pass:
+    file: ./.secrets/db_pass.txt
