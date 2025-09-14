@@ -52,7 +52,7 @@ cd wordpress
 > One file contains the username, the other file contains the password.  
 > Do not move or delete this folder or these files!
 
-[^1] WordPress stores data in a database. This requires a database user. The username and password are the credentials for this database user.
+[^1]: WordPress stores data in a database. This requires a database user. The username and password are the credentials for this database user.
 
 - WordPress typically starts on port 8080. The setup script will check if this port is in use. You can use this port or switch to your own port. 
 
@@ -68,13 +68,15 @@ cd wordpress
 
 ### Usage
  
-Open a browser and enter localhost:8080 [^2] to start configuration of WordPress. [^2](if you have changes the port number during setup, you must enter this port)
+Open a browser and enter localhost:8080 [^2] to start configuration of WordPress.
+[^2]: If you have changes the port number during setup, you must enter this port
 
 First you need to chose your language
 
 ![wordpress_language](img/wordpress_language.png)
 
-After that, you have to input some information (eg. username and password) [^3] [^3] NOT the user/pass you have entered while setup
+After that, you have to input some information (eg. username and password) [^3]
+[^3]: NOT the user/pass you have entered while setup
 
 ![wordpress_information](img/wordpress_information.png)
 
