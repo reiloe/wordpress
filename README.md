@@ -37,50 +37,40 @@ git clone https://github.com/reiloe/wordpress.git
 cd wordpress
 ```
 
+- Here you will find a file named example.env. Copy this file and rename it in .env.
+
+```bash
+cp example.env .env
+```
+
+> [!NOTE]
+> WordPress typically starts on port 8080.  
+> If you need to change this port you can do this in the .env file.
+ 
+> [!NOTE]
+> WordPress stores data in a database. This requires a database user.
+> This values you will find in the .env file too.
+> If you want you can change this value there.
+
 - run the following command:
 
 ```bash
-./setup.sh
+docker compose up
 ```
 
-- Type in a username and a password (for your safety you have to repeat the password)[^1]
-
-![Username_password](img/username_password.png)
-
-> [!CAUTION]  
-> A hidden folder named .secrets is created with two files inside.  
-> One file contains the username, the other file contains the password.  
-> Do not move or delete this folder or these files!
-
-[^1]: WordPress stores data in a database. This requires a database user. The username and password are the credentials for this database user.
-
-- WordPress typically starts on port 8080. The setup script will check if this port is in use. You can use this port or switch to your own port. 
-
-![port_free](img/port_free.png)
-
-![port_change_choice](img/port_change_choice.png)
-
-- If the port 8080 is in use you need to change the port.
-
-![port_in_use](img/port_in_use.png)
-
-- After a short time, WordPress is ready to use. 
-
-> [!CAUTION]  
-> A file called .env will be created.  
-> Do not move or delete this file!
+After a short time, WordPress is ready to use. 
 
 ### Usage
  
-Open a browser and enter localhost:8080 [^2] to start configuration of WordPress.
-[^2]: If you have changes the port number during setup, you must enter this port
+Open a browser and enter localhost:8080 [^1] to start configuration of WordPress.
+[^1]: If you have changes the port number during setup, you must enter this port
 
 First you need to chose your language
 
 ![wordpress_language](img/wordpress_language.png)
 
-After that, you have to input some information (eg. username and password) [^3]
-[^3]: NOT the user/pass you have entered while setup
+After that, you have to input some information (eg. username and password) [^2]
+[^2]: NOT the user/pass from .env file
 
 ![wordpress_information](img/wordpress_information.png)
 
@@ -112,4 +102,15 @@ If you want to re-setup WordPress run the following command inside the project f
 docker compose down
 ```
 
-Delete the .env file and the .secrets folder and run the whole process from [Quickstart](#Quickstart) again.
+and run the whole process from [Quickstart](#Quickstart) again.
+
+***
+
+If you want to run the setup without configuring the .env file you can run the following command:
+
+```bash
+docker compose up -e WORDPRESS_PORT=8080 -e DB_USER=MyDbUser -e DB_PASS=MyDbPass 
+```
+
+> [!NOTE]  
+> Replace the values for the port, database user, and password according to your preferences.
