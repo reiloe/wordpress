@@ -96,11 +96,14 @@ A root user is created for the database during setup. The root user's password c
 
 ***
 
-If you want to re-setup WordPress run the following command inside the project folder:
+If you want to re-setup WordPress completely run the following command inside the project folder:
 
 ```bash
-docker compose down
+docker compose down -v
 ```
+
+> [!CAUTION]  
+> You will completely remove WordPress and lose all your data and settings.!!!
 
 and run the whole process from [Quickstart](#Quickstart) again.
 
@@ -109,7 +112,7 @@ and run the whole process from [Quickstart](#Quickstart) again.
 If you want to run the setup without configuring the .env file you can run the following command:
 
 ```bash
-docker compose up -e WORDPRESS_PORT=8080 -e DB_USER=MyDbUser -e DB_PASS=MyDbPass 
+docker compose up -e WORDPRESS_PORT=8080 -e DB_USER=MyDbUser -e DB_PASS=MyDbPass -e DB_NAME=MyWordPress
 ```
 
 > [!NOTE]  
